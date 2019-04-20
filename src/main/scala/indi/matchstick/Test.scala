@@ -27,9 +27,8 @@ object Test {
       .option("password", "ccxk!123")
       .option("driver", "com.mysql.jdbc.Driver")
       .load()
-    jdbcDF.take(20).foreach(println);
+    jdbcDF.show();
 
   }
-
 
 }
