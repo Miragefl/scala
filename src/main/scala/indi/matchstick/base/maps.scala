@@ -7,7 +7,8 @@ object maps {
   def main(args: Array[String]): Unit = {
     println("===============可变映射==============")
     // 无序映射
-    var score = collection.mutable.Map("a" -> 1, "b" -> 2, "c" -> 3);
+    var score = collection.mutable.Map("a" -> 1, "b" -> 2, "c" -> 3, "a" -> 4);
+    println(score)
     score("a") = 2
     var score1 = score += ("d" -> 4);
     score1("a") = 3;

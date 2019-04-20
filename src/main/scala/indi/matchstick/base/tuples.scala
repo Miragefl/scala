@@ -14,6 +14,11 @@ object tuples {
     val symbols = Array("<", "-", ">");
     val counts = Array(2, 10, 2);
     val pairs = symbols.zip(counts);
+    println(pairs.toBuffer)
+
+    for ((s, n) <- pairs) {
+      print(s * n)
+    }
   }
 
 }
