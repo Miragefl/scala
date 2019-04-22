@@ -18,16 +18,16 @@ object Test {
     //    println("1.------------->" + df.count());
     //    println("1.------------->" + df.rdd.partitions.size);
     //    println("1")
-    val spark = SparkSession.builder().appName("MysqlQueryDemo").master("spark://192.168.1.248:7077").getOrCreate()
+    val spark = SparkSession.builder().appName("MysqlQueryDemo").master("spark://192.168.0.233:7077").getOrCreate()
     val jdbcDF = spark.read
       .format("jdbc")
       .option("url", "jdbc:mysql://47.111.5.179:3306/cc_user_profit?useUnicode=true&characterEncoding=utf-8")
-      .option("dbtable", "refund_order")
+      .option("dbtable", "pay_order")
       .option("user", "root")
       .option("password", "ccxk!123")
       .option("driver", "com.mysql.jdbc.Driver")
       .load()
-    jdbcDF.show();
+    jdbcDF.filter("DATE_FORMAT(create_time,'%Y%m%d')=20190410").show();
 
   }
 
