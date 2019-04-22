@@ -1,5 +1,7 @@
 package indi.matchstick.base
 
+import java.util.Date
+
 object functions {
   def main(args: Array[String]): Unit = {
     println(add("1.99","2.11","3.55","4.44"));
@@ -13,5 +15,13 @@ object functions {
       sum += BigDecimal(addNum);
     }
     return sum;
+  }
+
+  def logger (message:String): Unit ={
+    log(new Date(),message);
+  }
+
+  def log(date: Date, message: String)  = {
+    println(date + "----" + message)
   }
 }
